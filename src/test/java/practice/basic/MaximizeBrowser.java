@@ -1,4 +1,4 @@
-package playwright.practice;
+package practice.basic;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
