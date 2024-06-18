@@ -1,0 +1,16 @@
+Running CodeGen to Record the test
+
+Go inside the project directory and open command prompt. Enter the below command to launch the Playwright Inspector
+mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="codegen https://www.google.com/"
+
+Debugg test using variables
+In Eclipse Click on Run As-> Run Configuration -> Enviroment -> Add -> Name= PWDEBUGG Value= 1-> Ok -> Apply -> Run
+This will run the script in debug mode. This will launch the browser and the Playwright Inspector
+
+Trace Viewer
+	Playwright Trace Viewer is a GUI tool that lets you explore recorded Playwright traces of your tests meaning you can go back and forward though each action of your test and visually see what was happening during each action.
+
+To open the trace.zip
+1. In the Project folder open command prompt, enter the following command
+mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="show-trace ./src/test/resources/Output/trace.zip"
+2. Navigate to the https://trace.playwright.dev/ select the trace.zip file.
