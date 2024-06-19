@@ -1,9 +1,6 @@
 package locators;
 
-import java.util.Iterator;
 import java.util.List;
-
-import org.apache.poi.hssf.record.CountryRecord;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -41,7 +38,11 @@ public class WebElements {
 		
 		allCountry.forEach(s -> System.out.print(s));
 		
+		page.close();
+		context.close();
+		browser.close();
 		playwright.close();
+
 		
 	}
 

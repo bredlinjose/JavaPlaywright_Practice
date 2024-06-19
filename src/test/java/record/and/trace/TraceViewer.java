@@ -36,6 +36,12 @@ public class TraceViewer {
 			// Stop tracing and export it into a zip archive.
 			context.tracing().stop(new Tracing.StopOptions()
 			  .setPath(Paths.get("./src/test/resources/Output/trace.zip")));
+			
+			page.close();
+			context.close();
+			browser.close();
+			playwright.close();
+
 		}
 	}
 }

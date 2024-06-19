@@ -20,7 +20,11 @@ public class AutoLogin {
 		Page page = context.newPage();
 		page.navigate("http://www.automationpractice.pl/");
 		
+		page.close();
+		context.close();
+		browser.close();
 		playwright.close();
+
 	}
 
 }

@@ -15,12 +15,16 @@ public class WebElement {
 		BrowserContext context = browser.newContext();
 		Page page = context.newPage();
 		page.navigate("https://playwright.dev/java/");
-		
-		 Locator contactSales = page.locator("text = GET STARTED");
-		 contactSales.hover();
-		 contactSales.click();
-		
-		 playwright.close();
+
+		Locator contactSales = page.locator("text = GET STARTED");
+		contactSales.hover();
+		contactSales.click();
+
+		page.close();
+		context.close();
+		browser.close();
+		playwright.close();
+
 	}
 
 }

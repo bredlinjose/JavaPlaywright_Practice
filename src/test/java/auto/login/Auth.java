@@ -24,7 +24,11 @@ public class Auth {
 		
 		context.storageState(new BrowserContext.StorageStateOptions().setPath(Paths.get("./src/test/resources/Output/loginInfo.json")));
 		
+		page.close();
+		context.close();
+		browser.close();
 		playwright.close();
+
 	}
 
 }
