@@ -18,7 +18,7 @@ public class VideoRecord {
 			
 			BrowserContext context = browser
 					.newContext(new Browser.NewContextOptions()
-					.setRecordVideoDir(Paths.get("./src/test/resources/Output/")));
+					.setRecordVideoDir(Paths.get("./src/test/resources/")));
 					// record video in particular screen size
 					//.setRecordVideoDir(Paths.get("./src/test/resources/Output/")).setRecordVideoSize(640, 480));
 		

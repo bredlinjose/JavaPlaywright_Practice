@@ -22,7 +22,7 @@ public class FileUpload {
 		//input type= file
 		
 		//select one file
-		page.setInputFiles("input#filesToUpload", Paths.get("./src/test/resources/Output/loginInfo.json"));
+		page.setInputFiles("input#filesToUpload", Paths.get("./src/test/resources/loginInfo.json"));
 		Thread.sleep(4000);
 		//deselect the file
 		page.setInputFiles("input#filesToUpload", new Path[0]);

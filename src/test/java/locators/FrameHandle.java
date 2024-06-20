@@ -1,6 +1,4 @@
-package auto.login;
-
-import java.nio.file.Paths;
+package locators;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -8,27 +6,26 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class Auth {
+public class FrameHandle {
 
 	public static void main(String[] args) {
+		
 		Playwright playwright = Playwright.create();
 		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		BrowserContext context = browser.newContext();
 		Page page = context.newPage();
-		page.navigate("http://www.automationpractice.pl/");
+		page.navigate("https://www.londonfreelance.org/courses/frames/index.html");
 		
-		page.click("a:text('Sign in')");
-		page.fill("#email", "bredlinjose@gmail.com");
-		page.fill("#passwd", "Password@123");
-		page.click("#SubmitLogin");
+		String title = page.frameLocator("frame[name=main]").locator("h2").textContent();
+		System.out.println(title);
 		
-		context.storageState(new BrowserContext.StorageStateOptions().setPath(Paths.get("./src/test/resources/loginInfo.json")));
-		
+		title = page.frame("main").locator("h2").textContent();
+		System.out.println(title);
+
 		page.close();
 		context.close();
 		browser.close();
 		playwright.close();
-
 	}
 
 }

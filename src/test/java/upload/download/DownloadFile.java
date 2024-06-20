@@ -29,7 +29,7 @@ public class DownloadFile {
 		System.out.println("Temp Download Path: "+download.path().toString());
 		
 		// download in particular directory
-		download.saveAs(Paths.get("./src/test/resources/Output/chrome-driver.zip"));
+		download.saveAs(Paths.get("./src/test/resources/chrome-driver.zip"));
 		System.out.println("File name: "+ download.suggestedFilename()); // chromedriver_win32.zip
 		
 		

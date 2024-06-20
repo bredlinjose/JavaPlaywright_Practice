@@ -35,7 +35,7 @@ public class TraceViewer {
 			
 			// Stop tracing and export it into a zip archive.
 			context.tracing().stop(new Tracing.StopOptions()
-			  .setPath(Paths.get("./src/test/resources/Output/trace.zip")));
+			  .setPath(Paths.get("./src/test/resources/trace.zip")));
 			
 			page.close();
 			context.close();
