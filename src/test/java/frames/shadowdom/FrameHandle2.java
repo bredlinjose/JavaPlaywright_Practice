@@ -1,4 +1,4 @@
-package locators;
+package frames.shadowdom;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -6,7 +6,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class FrameHandle {
+public class FrameHandle2 {
 
 	public static void main(String[] args) {
 		
@@ -14,14 +14,12 @@ public class FrameHandle {
 		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		BrowserContext context = browser.newContext();
 		Page page = context.newPage();
-		page.navigate("https://www.londonfreelance.org/courses/frames/index.html");
+		page.navigate("https://www.formsite.com/templates/registration-form-templates/vehicle-registration-form/");
 		
-		String title = page.frameLocator("frame[name=main]").locator("h2").textContent();
-		System.out.println(title);
-		
-		title = page.frame("main").locator("h2").textContent();
-		System.out.println(title);
+		page.locator("img[title='Vehicle-Registration-Forms-and-Examples']").click();
+		page.frameLocator("//iframe[contains(@id,'frame-one')]").locator("#RESULT_TextField-8").fill("Bredlin");
 
+		
 		page.close();
 		context.close();
 		browser.close();

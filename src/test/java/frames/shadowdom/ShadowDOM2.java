@@ -1,4 +1,4 @@
-package locators;
+package frames.shadowdom;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;

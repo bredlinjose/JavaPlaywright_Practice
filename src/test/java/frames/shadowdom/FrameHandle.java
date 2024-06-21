@@ -1,4 +1,4 @@
-package locators;
+package frames.shadowdom;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -6,23 +6,22 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class ShadowDOM1 {
+public class FrameHandle {
 
 	public static void main(String[] args) {
 		
 		Playwright playwright = Playwright.create();
 		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		BrowserContext context = browser.newContext();
-		
 		Page page = context.newPage();
-		page.navigate("https://books-pwakit.appspot.com/");
+		page.navigate("https://www.londonfreelance.org/courses/frames/index.html");
 		
-		// Page -- DOM --> Shadow DOM --> elements
+		String title = page.frameLocator("frame[name=main]").locator("h2").textContent();
+		System.out.println(title);
 		
-		page.locator("book-app[apptitle='BOOKS'] #input").fill("Bredlin");
-		String text = page.locator("book-app[apptitle='BOOKS'] .books-desc").textContent();
-		System.out.println(text);
-		
+		title = page.frame("main").locator("h2").textContent();
+		System.out.println(title);
+
 		page.close();
 		context.close();
 		browser.close();

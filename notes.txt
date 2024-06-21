@@ -11,7 +11,7 @@ Trace Viewer: Playwright Trace Viewer is a GUI tool that lets you explore record
 
 To open the trace.zip
 1. In the Project folder open command prompt, enter the following command
-mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="show-trace ./src/test/resources/Output/trace.zip"
+mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="show-trace ./src/test/resources/trace.zip"
 2. Navigate to the https://trace.playwright.dev/ select the trace.zip file.
 
 Browser Context: It won't share the cookies, caches to another browser context. Within a browser we can create multiple browser context.
